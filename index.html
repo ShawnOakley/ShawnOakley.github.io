@@ -68,7 +68,7 @@
   }
 
   $('#lightbox').live('click', function() {
-      $('#lightbox').hide();
+      $('#lightbox').hide(1500);
   });
   </style>
 </head>
@@ -89,8 +89,6 @@
 <script type="text/javascript" src="jquery.gdocsviewer.min.js"></script>
 
 <script>
-
-
 
 jQuery(document).ready(function($) {
 
@@ -127,9 +125,9 @@ jQuery(document).ready(function($) {
             $('#content').html(idMemo(idRef));
             //shows lightbox window
             if (idRef === "resume") {
-              $('#embedURL').gdocsViewer().show();
+              $('#embedURL').gdocsViewer().show(1500);
             };
-            $('#lightbox').show();
+            $('#lightbox').show(1500);
         }
         else { //#lightbox does not exist - create and insert (runs 1st time only)
             //create HTML markup for lightbox window
@@ -146,10 +144,10 @@ jQuery(document).ready(function($) {
     });
     //Click anywhere on the page to get rid of lightbox window
     $('#lightbox').live('click', function() { //must use live, as the lightbox element is inserted into the DOM
-        $('#lightbox').hide();
+        $('#lightbox').hide(1500);
     });
 
-
+    $('#about').click()
 });
 </script>
 
