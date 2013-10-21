@@ -61,9 +61,9 @@
       <a class = "lightbox_trigger" id="about" href="">About</a>
       <a class = "lightbox_trigger" id="portfolio" href="">Portfolio</a>
       <a href="http://www.linkedin.com/pub/shawn-oakley/45/b01/157"  target="_blank">LinkedIn</a>
-      <a class = "lightbox_trigger" href="">Resume</a>
+      <a class = "lightbox_trigger" id="resume" href="">Resume</a>
       <a href="https://github.com/ShawnOakley"  target="_blank">GitHub</a>
-      <a class = "lightbox_trigger" id='email' href="">Contact Me</a>
+      <a class = "lightbox_trigger" id="email" href="">Contact Me</a>
     </nav>
   </div>
 
@@ -74,11 +74,35 @@
 
 
 jQuery(document).ready(function($) {
+
+  function idMemo(idRef) {
+    if (!idMemo.htmlStrings) idMemo.htmlStrings = {};
+    if(idMemo.htmlStrings[idRef] != null) {
+      return idMemo.htmlStrings[idRef];
+    }
+
+    var htmlString = "";
+    switch (idRef) {
+    case "about":
+      htmlString = "...";
+      break;
+    case "portfolio":
+      htmlString = "...";
+      break;
+    case "resume":
+      htmlString = "...";
+      break;
+    case "email":
+      htmlString = "...";
+      break;
+    };
+    return idMemo.htmlStrings[idRef] = htmlString
+  }
     $('.lightbox_trigger').click(function(e) {
         //prevent default action (hyperlink)
         e.preventDefault();
         //Get clicked link href
-        var image_href = $(this).attr("href");
+        var idRef = $(this).attr("id");
         /*
         If the lightbox window HTML already exists in document,
         change the img src to to match the href of whatever link was clicked
@@ -87,7 +111,7 @@ jQuery(document).ready(function($) {
         */
         if ($('#lightbox').length > 0) { // #lightbox exists
             //place href as img src value
-            $('#content').html('<iframe src="' + image_href + '"></iframe>');
+            $('#content').html('<iframe src="' + idMemo(idRef) + '"></iframe>');
             //show lightbox window - you could use .show('fast') for a transition
             $('#lightbox').show();
         }
@@ -97,7 +121,7 @@ jQuery(document).ready(function($) {
             '<div id="lightbox">' +
                 '<p>Click to close</p>' +
                 '<div id="content">' + //insert clicked link's href into img src
-                    '<iframe src="' + image_href + '" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" vspace="0" hspace="0"></iframe>' +
+                    '<iframe src="' + idMemo(idRef) + '" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" vspace="0" hspace="0"></iframe>' +
                 '</div>' +
             '</div>';
             //insert lightbox HTML into page
