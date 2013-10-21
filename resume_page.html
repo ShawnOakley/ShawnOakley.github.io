@@ -1,0 +1,116 @@
+<! DOCTYPE html>
+<html>
+<head>
+  <style>
+  body {
+    margin:0;
+    padding:0;
+    background:#efefef;
+    text-align:center;
+  }
+  li {
+    list-style-type:none;
+    display:inline-block;
+  }
+  #wrapper{
+    width:600px;
+    margin:0 auto;
+    background:#fff;
+    text-align:left;
+    border:1px solid #ccc;
+    border-top: none;
+    padding:25px;
+    border-radius: 0 0 5px 5px;
+    -moz-border-radius:0 0 5px 5px;
+    -webkit-border-radius: 0 0 5px 5px;
+    box-shadow:0 0 5px #ccc;
+    -moz-box-shadow:0 0 5px #ccc;
+    -webkit-box-shadow:0 0 5px #ccc;
+  }
+  #lightbox {
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:url(....) repeat;
+    text-align:center;
+  }
+  #lightbox p {
+    text-align:right;
+    color:#fff;
+    margin-right:20px;
+    font-size:12px;
+    height:auto;
+    width:auto;
+  }
+  #lightbox img {
+    box-shadow:0 0 25px #111;
+    -webkit-box-shadow: 0 0 25px #111;
+    -moz-box-shadow: 0 0 25px #111;
+    max-width: 940px;
+  }
+  $('#lightbox').live('click', function() {
+      $('#lightbox').hide();
+  });
+  </style>
+</head>
+
+<body>
+  <div class="content">
+    <nav class="options">
+      <li><a class = "lightbox_trigger" id="about" href="http://placekitten.com/200/300">About</a></li>
+      <li class = "lightbox_trigger" id="portfolio"><a href="">Portfolio</a></li>
+      <li><a href="http://www.linkedin.com/pub/shawn-oakley/45/b01/157">LinkedIn</a></li>
+      <li><a class = "lightbox_trigger" href="">Resume</a></li>
+      <li><a href="https://github.com/ShawnOakley">GitHub</a></li>
+      <li id='email'><a href="">Email</a></li>
+    </ul>
+  </div>
+
+<script src='https://code.jquery.com/jquery-1.6.2.min.js'></script>
+
+<script>
+jQuery(document).ready(function($) {
+    $('.lightbox_trigger').click(function(e) {
+        //prevent default action (hyperlink)
+        e.preventDefault();
+        //Get clicked link href
+        var image_href = $(this).attr("href");
+        /*
+        If the lightbox window HTML already exists in document,
+        change the img src to to match the href of whatever link was clicked
+        If the lightbox window HTML doesn't exists, create it and insert it.
+        (This will only happen the first time around)
+        */
+        if ($('#lightbox').length > 0) { // #lightbox exists
+            //place href as img src value
+            $('#content').html('<iframe src="' + image_href + '"></iframe>');
+            //show lightbox window - you could use .show('fast') for a transition
+            $('#lightbox').show();
+        }
+        else { //#lightbox does not exist - create and insert (runs 1st time only)
+            //create HTML markup for lightbox window
+            var lightbox =
+            '<div id="lightbox">' +
+                '<p>Click to close</p>' +
+                '<div id="content">' + //insert clicked link's href into img src
+                    '<iframe src="' + image_href + '" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" vspace="0" hspace="0"></iframe>' +
+                '</div>' +
+            '</div>';
+            //insert lightbox HTML into page
+            $('body').append(lightbox);
+        }
+    });
+    //Click anywhere on the page to get rid of lightbox window
+    $('#lightbox').live('click', function() { //must use live, as the lightbox element is inserted into the DOM
+        $('#lightbox').hide();
+    });
+
+
+});
+</script>
+
+
+</body>
+</html>
