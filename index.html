@@ -8,8 +8,7 @@
     background:#efefef;
     text-align:center;
   }
-  li {
-    list-style-type:none;
+  a {
     display:inline-block;
   }
   #wrapper{
@@ -59,18 +58,21 @@
 <body>
   <div class="content">
     <nav class="options">
-      <li><a class = "lightbox_trigger" id="about" href="http://placekitten.com/200/300">About</a></li>
-      <li class = "lightbox_trigger" id="portfolio"><a href="">Portfolio</a></li>
-      <li><a href="http://www.linkedin.com/pub/shawn-oakley/45/b01/157">LinkedIn</a></li>
-      <li><a class = "lightbox_trigger" href="">Resume</a></li>
-      <li><a href="https://github.com/ShawnOakley">GitHub</a></li>
-      <li id='email'><a href="">Email</a></li>
-    </ul>
+      <a class = "lightbox_trigger" id="about" href="">About</a>
+      <a class = "lightbox_trigger" id="portfolio" href="">Portfolio</a>
+      <a href="http://www.linkedin.com/pub/shawn-oakley/45/b01/157">LinkedIn</a>
+      <a class = "lightbox_trigger" href="">Resume</a>
+      <a href="https://github.com/ShawnOakley">GitHub</a>
+      <a class = "lightbox_trigger" id='email' href="">Contact Me</a>
+    </nav>
   </div>
 
 <script src='https://code.jquery.com/jquery-1.6.2.min.js'></script>
 
 <script>
+
+
+
 jQuery(document).ready(function($) {
     $('.lightbox_trigger').click(function(e) {
         //prevent default action (hyperlink)
