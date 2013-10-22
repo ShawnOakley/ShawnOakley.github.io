@@ -1,0 +1,135 @@
+body {
+  margin:0;
+  padding:0;
+  background:#FFFCFA;
+  text-align:center;
+}
+
+#darkness {
+    background:rgba(0, 0, 0, 0.5);
+    display:none;
+    height:100%;
+    left:0;
+    position:absolute;
+    top:0;
+    width:100%;
+    z-index:5;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  display:inline-block;
+}
+
+#wrapper{
+  width:600px;
+  margin:0 auto;
+  background:#fff;
+  text-align:left;
+  border:1px solid #ccc;
+  border-top: none;
+  padding:25px;
+  border-radius: 0 0 5px 5px;
+  -moz-border-radius:0 0 5px 5px;
+  -webkit-border-radius: 0 0 5px 5px;
+  box-shadow:0 0 5px #ccc;
+  -moz-box-shadow:0 0 5px #ccc;
+  -webkit-box-shadow:0 0 5px #ccc;
+  border: 3px solid #2E382F;
+}
+
+.options {
+  border: 3px solid #2E382F;
+  font-size: 24px;
+}
+
+.options {
+
+  width:auto;
+  margin-right:30%;
+  margin-left:30%;
+  background-color: #C7B26F;
+  border: 2px solid #2E382F;
+  border-radius:25px;
+}
+
+.options  a {
+  text-decoration:none;
+  color: #2E382F;
+  padding:10px;
+  background-color: #C7B26F;
+  cursor:pointer;
+  display:inline-block;
+  text-decoration:none;
+  width:auto;
+  border-radius:25px;
+  transition: background-color .25s ease-in-out;
+  -moz-transition: background-color .25s ease-in-out;
+  -webkit-transition: background-color .25s ease-in-out;
+}
+
+.options a:hover {
+   color: #efefef;
+   background-color: #2E382F;
+}
+
+.icon-link {
+  margin-top:10px;
+  border-radius:100%;
+  background-color: #efefef;
+}
+
+.icon-link:hover{
+  -webkit-filter: invert(100%);
+  transition: background-color .25s ease-in-out;
+  -moz-transition: background-color .25s ease-in-out;
+  -webkit-transition: background-color .25s ease-in-out;
+}
+
+#lightbox {
+  position:relative;
+  width:80%;
+  height:80%;
+  text-align:center;
+  z-index: 100;
+  margin:0 10%;
+}
+
+#lightbox p {
+  color:black;
+  font-size:12px;
+  z-index: 100;
+}
+
+#lightbox img {
+  box-shadow:0 0 25px #111;
+  -webkit-box-shadow: 0 0 25px #111;
+  -moz-box-shadow: 0 0 25px #111;
+  max-width: 940px;
+  z-index: 100;
+}
+
+#content {
+  margin: 0 auto;
+  width:80%;
+  height:auto;
+  margin:10%;
+  padding-bottom:2%;
+  border-radius:25px;
+  background-color: #B6CEB6;
+  border: 2px solid #841F1F;
+  z-index: 100;
+}
+
+#content a {
+  text-decoration:none;
+  z-index: 100;
+}
+
+#content:first-child {
+  padding-top:10px;
+  z-index: 100;
+}

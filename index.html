@@ -1,71 +1,8 @@
 <! DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
   <style>
-  body {
-    margin:0;
-    padding:0;
-    background:#efefef;
-    text-align:center;
-  }
-
-  li {
-    list-style-type: none;
-  }
-
-  a {
-    display:inline-block;
-  }
-
-  #wrapper{
-    width:600px;
-    margin:0 auto;
-    background:#fff;
-    text-align:left;
-    border:1px solid #ccc;
-    border-top: none;
-    padding:25px;
-    border-radius: 0 0 5px 5px;
-    -moz-border-radius:0 0 5px 5px;
-    -webkit-border-radius: 0 0 5px 5px;
-    box-shadow:0 0 5px #ccc;
-    -moz-box-shadow:0 0 5px #ccc;
-    -webkit-box-shadow:0 0 5px #ccc;
-  }
-
-  #lightbox {
-    position: fixed;
-    top:0;
-    left:0;
-    width:80%;
-    height:80%;
-    margin-left:10%;
-    margin-right:10%;
-    text-align:center;
-  }
-
-  #lightbox p {
-    color:black;
-    font-size:12px;
-  }
-
-  #lightbox img {
-    box-shadow:0 0 25px #111;
-    -webkit-box-shadow: 0 0 25px #111;
-    -moz-box-shadow: 0 0 25px #111;
-    max-width: 940px;
-  }
-
-  #content {
-    margin: 0 auto;
-    position:relative;
-    border: 1px solid black;
-    width:80%;
-    height:auto;
-    margin:10%;
-    padding-bottom:2%;
-    border-radius:25px;
-  }
 
   $('#lightbox').live('click', function() {
       $('#lightbox').hide(1500);
@@ -74,16 +11,24 @@
 </head>
 
 <body>
+
   <div class="content">
     <nav class="options">
       <a class = "lightbox_trigger" id="about" href="">About</a>
-      <a class = "lightbox_trigger" id="portfolio" href="">Portfolio</a>
-      <a href="http://www.linkedin.com/pub/shawn-oakley/45/b01/157"  target="_blank">LinkedIn</a>
       <a class = "lightbox_trigger" id="resume" href="">Resume</a>
-      <a href="https://github.com/ShawnOakley"  target="_blank">GitHub</a>
+      <a class = "lightbox_trigger" id="portfolio" href="">Portfolio</a>
       <a class = "lightbox_trigger" id="email" href="">Contact Me</a>
     </nav>
+    <nav class="links">
+      <a class="icon-link" href="https://github.com/ShawnOakley"  target="_blank"><img src="PNG/GitHub-Mark-32px.png" border="0" height="30px" width="30px"></a>
+      <a class="icon-link"  href="http://www.linkedin.com/pub/shawn-oakley/45/b01/157"  target="_blank"><img src="InBug-60px-R.png" border="0" height="30px" width="35px"></a>
+    </nav>
   </div>
+<div id="darkness"></div>
+
+
+
+
 
 <script src='https://code.jquery.com/jquery-1.6.2.min.js'></script>
 <script type="text/javascript" src="jquery.gdocsviewer.min.js"></script>
@@ -93,24 +38,32 @@
 jQuery(document).ready(function($) {
 
   function idMemo(idRef) {
-    if (!idMemo.htmlStrings) idMemo.htmlStrings = {};
-    if(idMemo.htmlStrings[idRef] != null) {
-      return idMemo.htmlStrings[idRef];
-    }
+
+    var portfolioString = "<div><h3><a href='https://github.com/ShawnOakley/form_generator_app' target='_blank'>Form Generator App</a></h3><text>Form Generator Description</text><br><h3><a href='https://github.com/ShawnOakley/Asteroids'  href='https://github.com/ShawnOakley/form_generator_app' target='_blank'>Asteroids</a></h3><text>Asteroids Description</text><br><h3><a href='https://github.com/ShawnOakley/Snake'  href='https://github.com/ShawnOakley/form_generator_app' target='_blank'>Form Generator App</a></h3><text>Snake Description</text><br><h3><a href='https://github.com/ShawnOakley/word_chains'  href='https://github.com/ShawnOakley/form_generator_app' target='_blank'>Word Chains</a></h3><text>Word Chains Description</text><br></div><p class='close tab'>Click anywhere in this window to close.</p>";
+
+    var emailString = "<text> I can be contacted at either <li><a href='mailto:shawnoakley@gmail.com'>shawnoakley@gmail.com</a></li> or <li>917-733-5851</li></text><p class='close tab'>Click anywhere in this window to close.</p>";
+
+    var aboutString = "<section class='about><img src='pre-elysium-brew.JPG'><p></p><p></p></section><p class='close tab'>Click anywhere in this window to close.</p>";
 
     var htmlString = "";
+
+      if (!idMemo.htmlStrings) idMemo.htmlStrings = {};
+        if(idMemo.htmlStrings[idRef] != null) {
+          return idMemo.htmlStrings[idRef];
+      };
+
     switch (idRef) {
     case "about":
-      htmlString = "<p>";
+      htmlString = aboutString;
       break;
     case "portfolio":
-      htmlString = "<div><h3><a href='https://github.com/ShawnOakley/form_generator_app' target='_blank'>Form Generator App</a></h3><text>Form Generator Description</text><br><h3><a href='https://github.com/ShawnOakley/Asteroids'  href='https://github.com/ShawnOakley/form_generator_app' target='_blank'>Asteroids</a></h3><text>Asteroids Description</text><br><h3><a href='https://github.com/jdpopkin/Snake?source=c'  href='https://github.com/ShawnOakley/form_generator_app' target='_blank'>Form Generator App</a></h3><text>Snake Description</text><br><h3><a href='https://github.com/ShawnOakley/word_chains'  href='https://github.com/ShawnOakley/form_generator_app' target='_blank'>Word Chains</a></h3><text>Word Chains Description</text><br></div>"
+      htmlString = portfolioString;
       break;
     case "resume":
       htmlString = "<a href='./resume.pdf' id='embedURL'>Download file</a>"
       break;
     case "email":
-      htmlString = "<text> I can be contacted at either <li><a href='mailto:shawnoakley@gmail.com'>shawnoakley@gmail.com</a></li> or <li>917-733-5851</li></text>";
+      htmlString = emailString;
       break;
     };
     return idMemo.htmlStrings[idRef] = htmlString
@@ -120,37 +73,47 @@ jQuery(document).ready(function($) {
         e.preventDefault();
         //Get clicked link href
         var idRef = $(this).attr("id");
-        if ($('#lightbox').length > 0) { // #if lightbox exists
+        if ($('#lightbox').length > 0) {
+          // #if lightbox exists
             //places href as img src value
+            $('#lightbox').fadeIn(1000);
             $('#content').html(idMemo(idRef));
-            //shows lightbox window
-            if (idRef === "resume") {
-              $('#embedURL').gdocsViewer().show(1500);
-            };
-            $('#lightbox').show(1500);
+            $('#darkness').fadeIn("slow");
+
+
         }
-        else { //#lightbox does not exist - create and insert (runs 1st time only)
+        else {
+          //#lightbox does not exist - create and insert (runs 1st time only)
             //create HTML markup for lightbox window
             var lightbox =
             '<div id="lightbox">' +
-                '<div id="content">' + //insert clicked link's href into img src
-                    idMemo(idRef) +
-                    '<p class="close tab">Click to close</p>' +
+                '<div id="content">' +
+                //insert clicked link's href into img src
+                    '<p class="welcome">Hello and welcome to my site</p>' +
+                    '<p class="close tab">Click anywhere in this window to close.</p>' +
                 '</div>' +
             '</div>';
             //insert lightbox HTML into page
             $('body').append(lightbox);
+            $('#lightbox').hide();
+            $('#lightbox').fadeIn(1000);
+            $('#darkness').fadeIn("slow");
+
         }
     });
     //Click anywhere on the page to get rid of lightbox window
-    $('#lightbox').live('click', function() { //must use live, as the lightbox element is inserted into the DOM
-        $('#lightbox').hide(1500);
+    $('#lightbox').live('click', function() {
+      //must use live, as the lightbox element is inserted into the DOM
+        $('#lightbox').fadeOut(1000);
+        $('#darkness').fadeOut("slow");
     });
 
-    $('#about').click()
+    $('#lightbox').animate({ opacity: 0}, 500, function(){
+      $('#lightbox').animate({ opacity: 1}, 500);
+    });
+
+    $("#about").click();
 });
 </script>
-
-
 </body>
 </html>
