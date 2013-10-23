@@ -1,7 +1,43 @@
+body, h1, ul, li, div, section, head, footer, table, td, th, tr, nav {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  border-radius:0;
+  font-family:sans-serif;
+  text-decoration:none;
+  overflow:hidden;
+}
+
+@font-face{
+  font-family: Acknowledgement;
+  src: url('assets/Acknowledgement.otf');
+}
+
+@font-face{
+  font-family:Bentham;
+  src: url('assets/Bentham.otf');
+}
+
+@font-face{
+  font-family:Geo;
+  src: url('assets/Geo.otf');
+}
+
+@font-face{
+  font-family:Geo-Oblique;
+  src: url('assets/Geo_Oblique.otf');
+}
+
 body {
   margin:0;
   padding:0;
-  background:#FFFCFA;
+  width:100%;
+  height: 100%;
+  background:url('assets/sandpaper.png');
   text-align:center;
 }
 
@@ -47,7 +83,6 @@ a {
 }
 
 .options {
-
   width:auto;
   margin-right:30%;
   margin-left:30%;
@@ -57,6 +92,7 @@ a {
 }
 
 .options  a {
+  font-family:Acknowledgement;
   text-decoration:none;
   color: #2E382F;
   padding:10px;
@@ -105,11 +141,11 @@ a {
 }
 
 #lightbox img {
-  box-shadow:0 0 25px #111;
-  -webkit-box-shadow: 0 0 25px #111;
-  -moz-box-shadow: 0 0 25px #111;
-  max-width: 940px;
+  height: auto;
+  max-width: 600px;
   z-index: 100;
+  border-radius:25px;
+  float:left;
 }
 
 #content {
@@ -125,11 +161,56 @@ a {
 }
 
 #content a {
+  font-family: Bentham;
+  font-size: x-large;
+}
+
+.content-text{
+  font-family: Bentham;
+  font-size: x-large;
+}
+
+.about .content-text{
+  float:left;
+  margin-left:5px;
+  margin-top:3px;
+}
+
+.content-text h3 {
+  color: #800000;
+  transition: background-color .1s ease-in-out;
+  -moz-transition: background-color .1s ease-in-out;
+  -webkit-transition: background-color .1s ease-in-out;
+}
+
+.content-text h3:hover {
+  color: white;
+}
+
+.close-tab{
+  font-family:Geo;
+}
+
+#phone{
+  font-family: Acknowledgement;
+  color: #800000;
+}
+
+#content a {
   text-decoration:none;
+  color: black;
   z-index: 100;
 }
 
 #content:first-child {
   padding-top:10px;
   z-index: 100;
+}
+
+#about-img{
+  padding-left:10px;
+  padding-top:10px;
+  height:50%;
+  width:30%;
+  float:left;
 }

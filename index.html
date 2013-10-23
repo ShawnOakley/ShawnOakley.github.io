@@ -5,7 +5,7 @@
   <style>
 
   $('#lightbox').live('click', function() {
-      $('#lightbox').hide(1500);
+      $('#lightbox').hide(1000);
   });
   </style>
 </head>
@@ -39,11 +39,11 @@ jQuery(document).ready(function($) {
 
   function idMemo(idRef) {
 
-    var portfolioString = "<div><h3><a href='https://github.com/ShawnOakley/form_generator_app' target='_blank'>Form Generator App</a></h3><text>Form Generator Description</text><br><h3><a href='https://github.com/ShawnOakley/Asteroids'  href='https://github.com/ShawnOakley/form_generator_app' target='_blank'>Asteroids</a></h3><text>Asteroids Description</text><br><h3><a href='https://github.com/ShawnOakley/Snake'  href='https://github.com/ShawnOakley/form_generator_app' target='_blank'>Form Generator App</a></h3><text>Snake Description</text><br><h3><a href='https://github.com/ShawnOakley/word_chains'  href='https://github.com/ShawnOakley/form_generator_app' target='_blank'>Word Chains</a></h3><text>Word Chains Description</text><br></div><p class='close tab'>Click anywhere in this window to close.</p>";
+    var portfolioString = "<div class='content-text'><a href='https://github.com/ShawnOakley/form_generator_app' target='_blank'><h3>Form Generator App</h3></a><br><text>Form Generator Description</text><br><a href='https://github.com/ShawnOakley/Asteroids'  href='https://github.com/ShawnOakley/form_generator_app' target='_blank'><h3>Asteroids</h3></a><br><text>Asteroids Description</text><br><a href='https://github.com/ShawnOakley/Snake'  href='https://github.com/ShawnOakley/form_generator_app' target='_blank'><h3>Form Generator App</h3></a><br><text>Snake Description</text><br><a href='https://github.com/ShawnOakley/word_chains'  href='https://github.com/ShawnOakley/form_generator_app' target='_blank'><h3>Word Chains</h3></a><br><text>Word Chains Description</text><br></div><p class='close-tab'>Click anywhere in this window to close.</p>";
 
-    var emailString = "<text> I can be contacted at either <li><a href='mailto:shawnoakley@gmail.com'>shawnoakley@gmail.com</a></li> or <li>917-733-5851</li></text><p class='close tab'>Click anywhere in this window to close.</p>";
+    var emailString = "<div class='content-text'><text> I can be contacted at either<br><a href='mailto:shawnoakley@gmail.com'>shawnoakley[A]gmail.com</a><br> or <br><text id='phone'> 917-733-5851<br></text></div><p class='close-tab'>Click anywhere in this window to close.</p>";
 
-    var aboutString = "<section class='about><img src='pre-elysium-brew.JPG'><p></p><p></p></section><p class='close tab'>Click anywhere in this window to close.</p>";
+    var aboutString = "<section class='about'><img src='pre-elysium-brew.JPG' id ='about-img'><div class='content-text'>There I am.</div></section><p class='close-tab'>Click anywhere in this window to close.</p>";
 
     var htmlString = "";
 
@@ -60,7 +60,7 @@ jQuery(document).ready(function($) {
       htmlString = portfolioString;
       break;
     case "resume":
-      htmlString = "<a href='./resume.pdf' id='embedURL'>Download file</a>"
+      htmlString = "<div class='content-text'><a href='./resume.pdf' id='embedURL'><h3>Take a look at my resume</h3></a></div><p class='close-tab'>Click anywhere in this window to close.</p>"
       break;
     case "email":
       htmlString = emailString;
@@ -89,8 +89,8 @@ jQuery(document).ready(function($) {
             '<div id="lightbox">' +
                 '<div id="content">' +
                 //insert clicked link's href into img src
-                    '<p class="welcome">Hello and welcome to my site</p>' +
-                    '<p class="close tab">Click anywhere in this window to close.</p>' +
+                    "<text class='content-text'>Hello.  Shawn Oakley speaking.  This is my site.  Have a look around.  You'll find links to some projects along with my pertinent info.  It's a work in progress, of course. </text>" +
+                    '<p class="close-tab">Click anywhere in this window to close.</p>' +
                 '</div>' +
             '</div>';
             //insert lightbox HTML into page
