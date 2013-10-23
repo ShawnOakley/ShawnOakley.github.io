@@ -168,6 +168,8 @@ a {
 .content-text{
   font-family: Bentham;
   font-size: x-large;
+  overflow:auto;
+  margin:10px;
 }
 
 .about .content-text{
@@ -178,14 +180,21 @@ a {
 
 .content-text h3 {
   color: #800000;
+  font-family: Acknowledgement;
   transition: background-color .1s ease-in-out;
   -moz-transition: background-color .1s ease-in-out;
   -webkit-transition: background-color .1s ease-in-out;
+  text-align:center;
 }
 
-.content-text h3:hover {
+.resume-content h3:hover {
   color: white;
 }
+
+.resume-content{
+  display:inline-block;
+}
+
 
 .close-tab{
   font-family:Geo;
@@ -213,4 +222,8 @@ a {
   height:50%;
   width:30%;
   float:left;
+}
+.content-text{
+  text-align:left;
+  font-size:medium;
 }
