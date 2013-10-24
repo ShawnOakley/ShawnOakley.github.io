@@ -223,7 +223,17 @@ a {
   width:30%;
   float:left;
 }
+
+.about a{
+  font-size:small;
+}
+
 .content-text{
   text-align:left;
   font-size:medium;
+}
+
+.content-text a {
+  font-size:medium !important;
+  color:blue !important;
 }
