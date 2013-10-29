@@ -89,6 +89,13 @@ a {
   background-color: #C7B26F;
   border: 2px solid #2E382F;
   border-radius:25px;
+  background-color: #6d695c;
+  background-image:
+  repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+  repeating-linear-gradient(60deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+  linear-gradient(60deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)),
+  linear-gradient(120deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1));
+  background-size: 70px 120px;
 }
 
 .options  a {
@@ -96,7 +103,6 @@ a {
   text-decoration:none;
   color: #2E382F;
   padding:10px;
-  background-color: #C7B26F;
   cursor:pointer;
   display:inline-block;
   text-decoration:none;
@@ -244,4 +250,8 @@ a {
 .content-text a {
   font-size:medium !important;
   color:blue !important;
+}
+
+#contact-text{
+  padding-left:25%;
 }
