@@ -170,6 +170,7 @@ a {
   font-size: x-large;
   overflow:auto;
   margin:10px;
+  width:auto;
 }
 
 .about .content-text{
@@ -185,9 +186,16 @@ a {
   -moz-transition: background-color .1s ease-in-out;
   -webkit-transition: background-color .1s ease-in-out;
   text-align:center;
+  width:auto;
 }
 
-.resume-content h3:hover {
+#embedURL{
+  padding-left:30%;
+  padding-right:30%;
+  width:auto;
+}
+
+.content-text h3:hover {
   color: white;
 }
 
