@@ -52,11 +52,11 @@ jQuery(document).ready(function($) {
     +
     "<br>"
     +
-    "<div class='content-entry'><img src='assets/contacts_manager.png'><a href='http://shawnoakley.com/contacts_manager_backbone/' target='_blank'><h3>Contacts Manager</h3></a><br><text class='project-description'>This app uses Backbone.js to make the front-end of a contacts manager. It's currently not connected to a database, meaning that the contacts can't be persisted. The user can add contacts, delete, sort, edit, and add categories for contacts.</text><br><p class='close-tab'>Click anywhere in this window to close.</p></div><br>";
+    "<div class='content-entry'><img src='assets/contacts_manager.png'><a href='http://shawnoakley.com/contacts_manager_backbone/' target='_blank'><h3>Contacts Manager</h3></a><br><text class='project-description'>This app uses Backbone.js to make the front-end of a contacts manager. It's currently not connected to a database, meaning that the contacts can't be persisted. The user can add contacts, delete, sort, edit, and add categories for contacts.</text><br><p id='close-tab'>Click anywhere in this window to close.</p></div><br>";
 
-    var emailString = "<div class='content-text' id='contact-text'><a href='mailto:shawnoakley@gmail.com'>shawnoakley[A]gmail.com</a> - or - <text id='phone'> 917-733-5851</text></div><p class='close-tab'>Click anywhere in this window to close.</p>";
+    var emailString = "<div class='content-text' id='contact-text'><a href='mailto:shawnoakley@gmail.com'>shawnoakley[A]gmail.com</a> - or - <text id='phone'> 917-733-5851</text></div><p id='close-tab'>Click anywhere in this window to close.</p>";
 
-    var aboutString = "<section class='about'><img src='pre-elysium-brew.JPG' id ='about-img'><div class='content-text'>There I am.  I'm a Rails developer based in New York City.  Coding has been a passion of mine for some time now.  In my spare time I've crafted some apps, a small portion of which you can check out in the 'Projects' link.  You can check out some more on my Github page, linked below.  Bioinformatics is a tremendous passion of mine as well.  If you're similarly inclined, I'd recommend you check out <a href='http://rosalind.info/about/' target='_blank'>Rosalind</a>. </div></section><p class='close-tab'>Click anywhere in this window to close.</p>";
+    var aboutString = "<section class='about'><img src='pre-elysium-brew.JPG' id ='about-img'><div class='content-text'>There I am.  I'm a Rails developer based in New York City.  Coding has been a passion of mine for some time now.  In my spare time I've crafted some apps, a small portion of which you can check out in the 'Projects' link.  You can check out some more on my Github page, linked below.  Bioinformatics is a tremendous passion of mine as well.  If you're similarly inclined, I'd recommend you check out <a href='http://rosalind.info/about/' target='_blank'>Rosalind</a>. </div></section><p id='close-tab'>Click anywhere in this window to close.</p>";
 
     var htmlString = "";
 
@@ -73,7 +73,7 @@ jQuery(document).ready(function($) {
       htmlString = portfolioString;
       break;
     case "resume":
-      htmlString = "<div class='content-text'><a href='./resume.pdf' id='embedURL'><h3>View my resume as a PDF</h3></a></div><p class='close-tab'>Click anywhere in this window to close.</p>"
+      htmlString = "<div class='content-text'><a href='./resume.pdf' id='embedURL'><h3>View my resume as a PDF</h3></a></div><p id='close-tab'>Click anywhere in this window to close.</p>"
       break;
     case "email":
       htmlString = emailString;
@@ -101,7 +101,7 @@ jQuery(document).ready(function($) {
                 '<div id="content">' +
                 //insert clicked link's href into img src
                     "<text class='content-text'>Hello.  Shawn Oakley speaking.  This is my site.  Have a look around.  You'll find links to some projects along with my pertinent info.  It's a work in progress, of course. </text>" +
-                    '<p class="close-tab">Click anywhere in this window to close.</p>' +
+                    '<p id="close-tab">Click anywhere in this window to close.</p>' +
                 '</div>' +
             '</div>';
             //insert lightbox HTML into page

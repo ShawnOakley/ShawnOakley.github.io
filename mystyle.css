@@ -182,7 +182,6 @@ a {
 
 .content-text .content-entry{
   text-align:block;
-
   font-family: Bentham;
 }
 
@@ -221,8 +220,11 @@ a {
 }
 
 
-.close-tab{
-  font-family:Geo;
+#close-tab{
+  font-family:Geo !important;
+  font-size: large !important;
+  font-style:bold !important;
+
 }
 
 #phone{
