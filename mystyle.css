@@ -138,6 +138,7 @@ a {
   text-align:center;
   z-index: 100;
   margin:0 10%;
+  overflow:auto;
 }
 
 #lightbox p {
@@ -174,9 +175,19 @@ a {
 .content-text{
   font-family: Bentham;
   font-size: x-large;
-  overflow:auto;
   margin:10px;
   width:auto;
+  height:auto;
+}
+
+.content-text .content-entry{
+  text-align:block;
+
+  font-family: Bentham;
+}
+
+.content-text img{
+  margin-right:5px;
 }
 
 .about .content-text{
