@@ -224,7 +224,6 @@ a {
   font-family:Geo !important;
   font-size: large !important;
   font-style:bold !important;
-
 }
 
 #phone{
@@ -258,6 +257,14 @@ a {
 .content-text{
   text-align:left;
   font-size:medium;
+}
+
+.line-break{
+  content: "";
+  border-bottom: 2px solid #800000 !important;
+  width:90%;
+  margin-right:5%;
+  margin-left:5%;
 }
 
 .content-text a {
